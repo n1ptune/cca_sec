@@ -1,0 +1,3 @@
+[submodule "aflcca"]
+    path = aflcca
+    url = https://github.com/n1ptune/aflcca.git
