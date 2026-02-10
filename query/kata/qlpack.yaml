@@ -1,0 +1,11 @@
+name: getting-started/codeql-querys-rust
+version: 0.1.13-dev
+groups:
+  - rust
+  - queries
+extractor: rust
+dependencies:
+  codeql/rust-all: ${workspace}
+  codeql/suite-helpers: ${workspace}
+  codeql/util: ${workspace}
+warnOnImplicitThis: true

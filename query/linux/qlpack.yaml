@@ -1,0 +1,4 @@
+name: arm-cca-queries
+version: 0.0.1
+dependencies:
+  codeql/cpp-all: "*"  # 依赖 C++ 标准库
