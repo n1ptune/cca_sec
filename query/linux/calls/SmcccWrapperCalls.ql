@@ -3,17 +3,23 @@ import cpp
 from Function caller,
      Function smcWrapper,
      FunctionCall call,
-     MacroInvocation mi
+     MacroInvocation mi,
+     Expr smcId
 where
-  // wrapper 内部确实调用了宏
+  // 1. smcWrapper 内部调用了 arm_smccc_1_1_invoke 宏
   mi.getMacro().getName() = "arm_smccc_1_1_invoke" and
   mi.getEnclosingFunction() = smcWrapper and
 
-  // caller → smcWrapper
+  // 2. 取 SMC ID（宏的第一个参数，index 0）
+  smcId = mi.getExpr().getChild(0) and
+
+  // 3. caller 调用了 smcWrapper
   call.getTarget() = smcWrapper and
-  call.getEnclosingCallable() = caller
+  call.getEnclosingFunction() = caller
+
 select
-  caller.getName()     as caller,
-  smcWrapper.getName() as smc_wrapper,
-  call.getLocation().getFile(),
-  call.getLocation().getStartLine()
+  caller,
+  caller.getName(),
+  smcWrapper.getName(),
+  smcId.toString(),
+  call.getLocation()

@@ -6,6 +6,6 @@ where
   mi.getEnclosingFunction() = f
 select
   mi,
-  f.getName()                as enclosing_function,
+  f.getName(),
   mi.getLocation().getFile(),
   mi.getLocation().getStartLine()
