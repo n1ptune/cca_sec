@@ -57,7 +57,7 @@ for query:
     make rmm-db
     make kata-db
 
-    ##It is recommended to run using the CodeQL extension for VS Code.
+    //It is recommended to run using the CodeQL extension for VS Code.
     make linux-run
     make rmm-run
     make kata-run
