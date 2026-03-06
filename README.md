@@ -1,5 +1,6 @@
 for fuzz:
     replace normal world include linux,u-boot with rmm_fuzz
+
     ```
     BL33_BIN		?= $(RMM_FUZZ_BIN)
 
@@ -52,7 +53,7 @@ for fuzz:
     ```
 for query:
     install codeql env and create database for linux, rmm, kata and then run query
-    
+
     ```
     make linux-db
     make rmm-db
