@@ -51,7 +51,8 @@ for fuzz:
             -s -S
     ```
 for query:
-    install codeql env and create database for linux, rmm, kata and then run query;
+    install codeql env and create database for linux, rmm, kata and then run query
+    
     ```
     make linux-db
     make rmm-db
